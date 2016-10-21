@@ -6,9 +6,12 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.taskrc: taskrc
     ~/.tmux.conf: tmux.conf
+    ~/.tmux.statusline.conf: tmux.statusline.conf
     ~/.vim: vim
     ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
