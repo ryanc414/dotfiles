@@ -5,7 +5,6 @@
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: ''
     ~/.taskrc: taskrc
     ~/.tmux.conf: tmux.conf
     ~/.tmux.statusline.conf: tmux.statusline.conf
