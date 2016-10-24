@@ -30,7 +30,6 @@ antigen apply
 
 
 # Alias
-alias cdb='cd $CB_ROOT'
 alias gotest='go test -v . | sed ''/PASS/s//$(printf "\033[32;1mPASS\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31;1mFAIL\033[0m")/'' | sed ''/RUN/s//$(printf "\033[0;1mRUN\033[0m")/'''
 ## For tmux to work in 256 colour mode
 alias tmux='TERM=xterm-256color tmux'
@@ -44,3 +43,5 @@ source ~/.fzf.zsh
 # Terminal type
 export TERM="xterm-256color"
 
+# Context-specifics
+source ~/.zshrc_user
