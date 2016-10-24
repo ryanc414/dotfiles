@@ -36,6 +36,15 @@ report._reviewed.columns=uuid
 report._reviewed.sort=reviewed+,modified+
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-1week ) and ( +PENDING or +WAITING )
 
+# Active, annotated and tagged tasks aren't necessarily more urgent
+urgency.active.coefficient=0.1
+urgency.annotations.coefficient=0.1
+urgency.tags.coefficient=0.0
+# Blocking tasks aren't all that much more urgent
+urgency.blocking.coefficient=1
+# Blocked tasks aren't necessarily less urgent
+urgency.blocked.coefficient=-0.1
+
 uda.priority.values=H,M,,L
 context.work=-personal
 context.home=+personal
