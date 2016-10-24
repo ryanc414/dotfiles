@@ -1,0 +1,44 @@
+[user]
+        name = Chris Tozer
+        email = christopherjtozer@gmail.com
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim
+        pager = less -FRSX
+[alias]
+        st = status
+        co = checkout
+        c- = checkout --
+        br = !br
+        ci = commit
+        cm = commit -m
+        ca = commit -a
+        cam = commit -a -m
+        amend = commit --amend
+        l = log --graph --abbrev-commit --all --date=local --pretty=format:'%C(white)%h%Creset -%C(auto)%d%Creset %<|(100,trunc)%s %C(yellow bold)<%an>%Creset %ad'
+        ll = log --graph --pretty=full --all --decorate=full --stat
+        lol = log --graph --oneline --all --decorate --date-order
+        note = branch --edit-description
+        ds = diff --stat
+        info = status --porcelain -b
+        findrev = svn log --date=local --show-commit -r
+[color]
+        ui = true
+[color "diff"]
+        old = red bold
+        new = green bold
+        meta = white reverse
+[color "status"]
+        added = green bold
+        changed = red bold
+        untracked = magenta bold
+        branch = bold
+        nobranch = red bold
+[color "branch"]
+        current = green
+        remote = red bold
+[color "interactive"]
+        prompt = yellow bold
+        help = white
+[push]
+        default = matching

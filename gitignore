@@ -1,0 +1,8 @@
+*.swp
+
+# nbase.ini
+/nbase.ini
+/nbase.ini.BAK
+
+# ST
+*.sublime-*

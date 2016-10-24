@@ -5,6 +5,8 @@
 - clean: ['~']
 
 - link:
+    ~/.gitconfig: gitconfig
+    ~/.gitignore: gitignore
     ~/.taskrc: taskrc
     ~/.tmux.conf: tmux.conf
     ~/.tmux.statusline.conf: tmux.statusline.conf
