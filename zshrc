@@ -40,6 +40,9 @@ alias ts='task summary'
 # FZF
 source ~/.fzf.zsh
 
+# Don't share history
+setopt no_share_history
+
 # Terminal type
 export TERM="xterm-256color"
 
