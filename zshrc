@@ -47,4 +47,7 @@ setopt no_share_history
 export TERM="xterm-256color"
 
 # Context-specifics
-source ~/.zshrc_user
+if [ -f ~/.zshrc_user ]
+then
+  source ~/.zshrc_user
+fi
