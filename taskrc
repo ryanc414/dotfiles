@@ -45,13 +45,15 @@ urgency.blocking.coefficient=1
 # Blocked tasks aren't necessarily less urgent
 urgency.blocked.coefficient=-0.1
 
+# Sync to Inthe.AM
+taskd.certificate=~/.task/private.certificate.pem
+taskd.key=~/.task/private.key.pem
+taskd.ca=~/.task/ca.cert.pem
+taskd.server=taskwarrior.inthe.am:53589
+taskd.credentials=inthe_am/christopherjtozer/66ad8443-a80f-4a81-9b5c-c1ab2ceb27a6
+taskd.trust=ignore hostname
+
 uda.priority.values=H,M,,L
 context.work=-personal -review
 context.review=+review
 context.home=+personal
-taskd.server=freecinc.com:53589
-taskd.key=\/data\/home\/.task\/freecinc_9aad60a6.key.pem
-taskd.certificate=\/data\/home\/.task\/freecinc_9aad60a6.cert.pem
-taskd.ca=\/data\/home\/.task\/freecinc_9aad60a6.ca.pem
-taskd.credentials=FreeCinc\/freecinc_9aad60a6\/37d7b616-f3fd-4438-8178-1172451a140d
-context=work
