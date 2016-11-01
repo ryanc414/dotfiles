@@ -46,7 +46,8 @@ urgency.blocking.coefficient=1
 urgency.blocked.coefficient=-0.1
 
 uda.priority.values=H,M,,L
-context.work=-personal
+context.work=-personal -review
+context.review=+review
 context.home=+personal
 taskd.server=freecinc.com:53589
 taskd.key=\/data\/home\/.task\/freecinc_9aad60a6.key.pem
