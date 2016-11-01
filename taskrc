@@ -54,6 +54,5 @@ taskd.credentials=inthe_am/christopherjtozer/66ad8443-a80f-4a81-9b5c-c1ab2ceb27a
 taskd.trust=ignore hostname
 
 uda.priority.values=H,M,,L
-context.work=-personal -review
-context.review=+review
+context.work=-personal
 context.home=+personal
