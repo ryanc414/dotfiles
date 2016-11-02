@@ -43,6 +43,9 @@ alias tmux='TERM=xterm-256color tmux'
 alias tn='tasknote'
 alias ts='task summary'
 
+# Path
+export PATH=$PATH:~/path/
+
 # FZF
 source ~/.fzf.zsh
 
