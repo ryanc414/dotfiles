@@ -5,6 +5,9 @@
 - clean: ['~']
 
 - link:
+    ~/path/br:
+        create: true
+        path: br
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.holidays: holidays

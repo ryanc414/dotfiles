@@ -9,7 +9,7 @@
         st = status
         co = checkout
         c- = checkout --
-        br = !br
+        br = !~/path/br
         ci = commit
         cm = commit -m
         ca = commit -a
