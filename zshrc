@@ -24,6 +24,8 @@ antigen bundle willghatch/zsh-saneopt
 export BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 export BULLETTRAIN_PROMPT_ADD_NEWLINE=false
 export BULLETTRAIN_EXEC_TIME_SHOW=true
+export BULLETTRAIN_TIME_BG=magenta
+export BULLETTRAIN_TIME_FG=yellow
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 # Tell antigen that you're done.
