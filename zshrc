@@ -23,11 +23,14 @@ antigen bundle willghatch/zsh-saneopt
 # Load the theme.
 export BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 export BULLETTRAIN_PROMPT_ADD_NEWLINE=false
+export BULLETTRAIN_EXEC_TIME_SHOW=true
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 # Tell antigen that you're done.
 antigen apply
 
+# Needed for ctrl-x ctrl-e to work for some reason...
+export EDITOR=vim
 
 # Alias
 alias gotest='go test -v . | sed ''/PASS/s//$(printf "\033[32;1mPASS\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31;1mFAIL\033[0m")/'' | sed ''/RUN/s//$(printf "\033[0;1mRUN\033[0m")/'''
