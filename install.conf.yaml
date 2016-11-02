@@ -7,10 +7,13 @@
 - link:
     ~/path/br:
         create: true
-        path: br
+        path: bin/br
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.holidays: holidays
+    ~/path/tasknote:
+        create: true
+        path: bin/tasknote
     ~/.taskrc: taskrc
     ~/.tmux.conf: tmux.conf
     ~/.tmux.statusline.conf: tmux.statusline.conf
