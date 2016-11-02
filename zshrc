@@ -10,6 +10,7 @@ antigen bundle command-not-found
 # antigen bundle tmuxinator
 antigen bundle taskwarrior
 antigen bundle colored-man-pages
+antigen bundle sudo
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -46,7 +47,7 @@ alias ts='task summary'
 source ~/.fzf.zsh
 
 # Don't share history
-setopt no_share_history
+# setopt no_share_history
 
 # Terminal type
 export TERM="xterm-256color"
