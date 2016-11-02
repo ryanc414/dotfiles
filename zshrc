@@ -34,7 +34,7 @@ alias gotest='go test -v . | sed ''/PASS/s//$(printf "\033[32;1mPASS\033[0m")/''
 ## For tmux to work in 256 colour mode
 alias tmux='TERM=xterm-256color tmux'
 ## Alias for next task
-alias tn='task next'
+alias tn='tasknote'
 alias ts='task summary'
 
 # FZF
@@ -45,6 +45,10 @@ setopt no_share_history
 
 # Terminal type
 export TERM="xterm-256color"
+
+# Colour scheme for tasknote
+# Do `mdv -t all | less` to explore other options.
+export AXC_THEME=884.0134
 
 # Context-specifics
 if [ -f ~/.zshrc_user ]

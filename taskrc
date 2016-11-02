@@ -56,3 +56,4 @@ taskd.trust=ignore hostname
 uda.priority.values=H,M,,L
 context.work=-personal
 context.home=+personal
+context=work

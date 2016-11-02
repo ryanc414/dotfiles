@@ -204,6 +204,8 @@ Bundle 'scrooloose/syntastic'
 Plugin 'vimwiki'
 Plugin 'rodjek/vim-puppet'
 Plugin 'fatih/vim-go'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " status line
 Plugin 'bling/vim-airline'
