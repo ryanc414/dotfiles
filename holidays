@@ -1,0 +1,35 @@
+# Autocalc for Easter :)
+holiday.goodfriday.name=Good Friday
+holiday.goodfriday.date=goodfriday
+holiday.eastersunday.name=Easter
+holiday.eastersunday.date=easter
+holiday.eastermonday.name=Easter Monday
+holiday.eastermonday.date=eastermonday
+
+# Other national hols
+holiday.xmas2016.name=Christmas Day
+holiday.xmas2016.date=20161225
+holiday.boxing2016.name=Boxing Day
+holiday.boxing2016.date=20161226
+holiday.xmas2016_subs.name=Christmas Day (Substitute)
+holiday.xmas2016_subs.date=20161227
+holiday.newyear2017.name=New Year's Day
+holiday.newyear2017.date=20170102
+holiday.earlymay2017.date=20170501
+holiday.springbh2017.date=20170529
+holiday.augbh2017.date=20170828
+holiday.xmas2017.date=20171225
+holiday.boxing2017.date=20171226
+
+# Personal hols
+holiday.bologna1.date=20161107
+holiday.bologna2.date=20161108
+holiday.bologna3.date=20161109
+holiday.brussels1.date=20161201
+holiday.brussels2.date=20161202
+holiday.brussels3.date=20161203
+holiday.brussels4.date=20161204
+holiday.brussels5.date=20161205
+holiday.xmas1.date=20161228
+holiday.xmas2.date=20161229
+holiday.xmas3.date=20161230

@@ -7,6 +7,7 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
+    ~/.holidays: holidays
     ~/.taskrc: taskrc
     ~/.tmux.conf: tmux.conf
     ~/.tmux.statusline.conf: tmux.statusline.conf
