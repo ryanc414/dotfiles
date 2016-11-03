@@ -18,6 +18,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # z plugin for navigation
 antigen bundle rupa/z
 
+# k command for colourful ls
+antigen bundle supercrabtree/k
+
 # 'sensible' defaults
 antigen bundle willghatch/zsh-saneopt
 
