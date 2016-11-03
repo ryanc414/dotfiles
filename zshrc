@@ -46,8 +46,11 @@ alias ts='task summary'
 # Path
 export PATH=$PATH:~/path/
 
-# FZF
-source ~/.fzf.zsh
+# FZF - needs installing so only source if installed.
+if [ -f ~/.fzf.zsh ]
+then
+  source ~/.fzf.zsh
+fi
 
 # Don't share history
 # setopt no_share_history

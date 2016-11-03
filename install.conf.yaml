@@ -5,6 +5,7 @@
 - clean: ['~']
 
 - link:
+    ~/antigen: antigen
     ~/path/br:
         create: true
         path: bin/br
