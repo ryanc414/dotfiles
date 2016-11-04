@@ -62,7 +62,7 @@ then
 fi
 
 # Don't share history
-# setopt no_share_history
+setopt no_share_history
 
 # Terminal type
 export TERM="xterm-256color"
