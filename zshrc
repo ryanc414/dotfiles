@@ -1,3 +1,8 @@
+# Define __git_files to prevent really slow autocompletion on large repos
+__git_files () {
+  _files
+}
+
 source ~/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -30,6 +35,7 @@ export BULLETTRAIN_PROMPT_ADD_NEWLINE=false
 export BULLETTRAIN_EXEC_TIME_SHOW=true
 export BULLETTRAIN_TIME_BG=magenta
 export BULLETTRAIN_TIME_FG=yellow
+export BULLETTRAIN_GIT_EXTENDED=false # Simple 'is workspace dirty' only to save time on large codebases
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 # Tell antigen that you're done.
