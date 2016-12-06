@@ -48,8 +48,10 @@ urgency.blocked.coefficient=-0.1
 # Best description of colours is here: https://taskwarrior.org/docs/clog/color.html
 # Set special colour for milestone tasks
 color.tag.milestone=rgb013 on gray2
-# Less garish for active task
+# Less garish for active task, bocked & blocking tasks
 color.active=rgb320 on gray4
+color.blocking=white on rgb200
+color.blocked=gray4 on rgb100
 
 # Sync to Inthe.AM
 taskd.certificate=~/.task/private.certificate.pem
