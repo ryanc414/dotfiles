@@ -44,6 +44,8 @@ urgency.tags.coefficient=0.0
 urgency.blocking.coefficient=1
 # Blocked tasks aren't necessarily less urgent
 urgency.blocked.coefficient=-0.1
+# Age doesn't matter
+urgency.age.coefficient=0.0
 
 # Best description of colours is here: https://taskwarrior.org/docs/clog/color.html
 # Set special colour for milestone tasks
