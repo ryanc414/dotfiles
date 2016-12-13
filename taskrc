@@ -48,8 +48,9 @@ urgency.blocked.coefficient=-0.1
 urgency.age.coefficient=0.0
 
 # Best description of colours is here: https://taskwarrior.org/docs/clog/color.html
-# Set special colour for milestone tasks
-color.tag.milestone=rgb013 on gray2
+# Set special colour for milestone tasks and reviews
+color.tag.milestone=rgb013 on grey2
+color.tag.review=rgb224 on grey3
 # Less garish for active task, bocked & blocking tasks
 color.active=rgb320 on gray4
 color.blocking=white on rgb200
