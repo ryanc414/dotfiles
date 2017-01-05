@@ -42,3 +42,4 @@
         help = white
 [push]
         default = matching
+        followTags = true
