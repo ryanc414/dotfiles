@@ -22,7 +22,7 @@
         ds = diff --stat
         info = status --porcelain -b
         findrev = svn log --date=local --show-commit -r
-        yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
+        yolo = !git commit -m \"[yolo] $(curl -s whatthecommit.com/index.txt)\"
 [color]
         ui = true
 [color "diff"]
