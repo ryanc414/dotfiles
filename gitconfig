@@ -41,5 +41,5 @@
         prompt = yellow bold
         help = white
 [push]
-        default = matching
+        default = simple
         followTags = true
