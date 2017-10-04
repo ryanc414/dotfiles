@@ -64,6 +64,8 @@ alias cddebug='cd $CB_ROOT/output/jobs/lnx64/fv/debug'
 alias cdrelease='cd $CB_ROOT/output/jobs/lnx64/fv/release'
 alias ls=exa
 alias sub=sublime
+alias fls='firefox ${CB_ROOT}/output/autogen/rdf/fls.html &'
+alias gitlab='~/bin/gitlab'
 
 # Path
 export PATH=$PATH:~/path/
