@@ -1,46 +1,61 @@
-[user]
-        name = Chris Tozer
-        email = christopherjtozer@gmail.com
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
-        pager = less -FRSX
+  pager = less -FRSX
+  excludesfile = ~/.gitignore
+  editor = vim
+
 [alias]
-        st = status
-        co = checkout
-        c- = checkout --
-        br = !~/path/br
-        ci = commit
-        cm = commit -m
-        ca = commit -a
-        cam = commit -a -m
-        amend = commit --amend
-        l = log --graph --abbrev-commit --all --date=local --pretty=format:'%C(white)%h%Creset -%C(auto)%d%Creset %<|(100,trunc)%s %C(yellow bold)<%an>%Creset %ad'
-        ll = log --graph --pretty=full --all --decorate=full --stat
-        lol = log --graph --oneline --all --decorate --date-order
-        note = branch --edit-description
-        ds = diff --stat
-        info = status --porcelain -b
-        findrev = svn log --date=local --show-commit -r
-        yolo = !git commit -m \"[yolo] $(curl -s whatthecommit.com/index.txt)\"
-[color]
-        ui = true
-[color "diff"]
-        old = red bold
-        new = green bold
-        meta = white reverse
-[color "status"]
-        added = green bold
-        changed = red bold
-        untracked = magenta bold
-        branch = bold
-        nobranch = red bold
-[color "branch"]
-        current = green
-        remote = red bold
-[color "interactive"]
-        prompt = yellow bold
-        help = white
+	co = checkout
+	cm = commit
+	rb = rebase
+	br = branch
+  df = diff --color
+  fd = diff --name-only
+	st = status
+  cp = cherry-pick
+	hist = log --all --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
+	brs = log --branches --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lol = log --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s' HEAD origin/master
+  untracked = ls-files --others --exclude-standard
+  amend = commit --amend
+  note = branch --edit-description
+  info = status --porcelain -b
+  yolo = !git commit -m \"[yolo] $(curl -s whatthecommit.com/index.txt)\"
+
+[merge]
+  tool = vimdiff
+
 [push]
-        default = simple
-        followTags = true
+	default = current
+
+[user]
+	name = Ryan Collingham
+  email = Ryan.Collingham@metaswitch.com
+
+[gc]
+  auto = 256
+  pruneExpire = now
+
+[color]
+  ui = true
+
+[color "diff"]
+  old = red bold
+  new = green bold
+  meta = white reverse
+
+[color "status"]
+  added = green bold
+  changed = red bold
+  untracked = magenta bold
+  branch = bold
+  nobranch = red bold
+
+[color "branch"]
+  current = green
+  remote = red bold
+
+[color "interactive"]
+  prompt = yellow bold
+  help = white
+

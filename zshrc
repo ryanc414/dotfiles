@@ -36,8 +36,6 @@ export ZSH_THEME="agnoster"
 export BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 export BULLETTRAIN_PROMPT_ADD_NEWLINE=false
 export BULLETTRAIN_EXEC_TIME_SHOW=true
-#export BULLETTRAIN_TIME_BG=magenta
-#export BULLETTRAIN_TIME_FG=yellow
 export BULLETTRAIN_GIT_EXTENDED=false # Simple 'is workspace dirty' only to save time on large codebases
 BULLETTRAIN_PROMPT_ORDER=(time status custom context dir perl ruby virtualenv aws go elixir git hg cmd_exec_time)
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train

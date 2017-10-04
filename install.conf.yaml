@@ -11,7 +11,6 @@
         path: bin/br
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
-    ~/.holidays: holidays
     ~/path/tasknote:
         create: true
         path: bin/tasknote
