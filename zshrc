@@ -3,6 +3,8 @@ __git_files () {
   _files
 }
 
+[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER=$(whoami)
+
 source ~/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -30,11 +32,12 @@ antigen bundle supercrabtree/k
 antigen bundle willghatch/zsh-saneopt
 
 # Load the theme.
+export ZSH_THEME="agnoster"
 export BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 export BULLETTRAIN_PROMPT_ADD_NEWLINE=false
 export BULLETTRAIN_EXEC_TIME_SHOW=true
-export BULLETTRAIN_TIME_BG=magenta
-export BULLETTRAIN_TIME_FG=yellow
+#export BULLETTRAIN_TIME_BG=magenta
+#export BULLETTRAIN_TIME_FG=yellow
 export BULLETTRAIN_GIT_EXTENDED=false # Simple 'is workspace dirty' only to save time on large codebases
 BULLETTRAIN_PROMPT_ORDER=(time status custom context dir perl ruby virtualenv aws go elixir git hg cmd_exec_time)
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
@@ -52,6 +55,17 @@ alias tmux='TERM=xterm-256color tmux'
 ## Alias for next task
 alias tn='tasknote'
 alias ts='task summary'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ll='ll -h'
+alias cdb='cd $CB_ROOT'
+alias cdd='cd /data'
+alias grep='grep --color -I'
+alias cddebug='cd $CB_ROOT/output/jobs/lnx64/fv/debug'
+alias cdrelease='cd $CB_ROOT/output/jobs/lnx64/fv/release'
+alias ls=exa
+alias sub=sublime
 
 # Path
 export PATH=$PATH:~/path/
@@ -77,3 +91,18 @@ if [ -f ~/.zshrc_user ]
 then
   source ~/.zshrc_user
 fi
+
+alias bob='cdb && bob'
+
+fvd()
+{
+  cddebug && fvrun "$@"
+  cd -
+}
+
+fvr()
+{
+  cdrelease && fvrun "$@"
+  cd -
+}
+
