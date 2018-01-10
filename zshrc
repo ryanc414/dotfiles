@@ -69,6 +69,7 @@ alias gitlab='~/bin/gitlab'
 alias spython='python3.7'
 alias bob='cdb && bob'
 alias scoop='cdb && scoop'
+alias cds='cd ~/sprint/sprint_scripts'
 
 # Path
 export PATH=$PATH:~/path/
@@ -158,12 +159,17 @@ docker_kill()
 # Convenience function to wrap jenkins_upg_perimeta.py, setting up the
 # PYTHONPATH as needed.
 # Uses the SLOTH framework to automatically upgrade a perimeta.
-function upgrade_perimeta()
+upgrade_perimeta()
 {
     # Execute in sub-shell so that PYTHONPATH changes are local.
     (
         PYTHONPATH="${CB_ROOT}/orlando/test/sloth2:${CB_ROOT}/orlando/python/legacy:${CB_ROOT}/orlando/python/packages:${CB_ROOT}/orlando/python/scripts"
         python "${CB_ROOT}/orlando/python/scripts/jenkins/jenkins_upg_perimeta.py" "$@"
     )
+}
+
+permoans()
+{
+  (cd ${CB_ROOT} && python ${CB_ROOT}/orlando/python/scripts/permoans.py)
 }
 
