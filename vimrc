@@ -102,8 +102,9 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<CR>
-set norelativenumber
-set nonumber
+
+set relativenumber
+highlight LineNr ctermfg=darkgray
 
 " Simple plugin settings
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
@@ -131,13 +132,6 @@ set statusline+=%*
 " let g:syntastic_check_on_wq = 0
 " Disable GCC checking, as it's not feasible with huge codebases.
 let g:syntastic_c_checkers=[]
-
-" Go syntax highlighting and stuff.
-filetype off
-filetype plugin indent off
-set rtp+=$GOROOT/misc/vim
-filetype plugin indent on
-syntax on
 
 " Cscope options:
 set csprg=gtags-cscope
@@ -194,30 +188,22 @@ Bundle 'VundleVim/Vundle.vim'
 " My Bundles:
 "
 " Github repos
-Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
+Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'python-mode/python-mode'
 Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle 'rking/ag.vim'
-Bundle 'vim-scripts/VimIRC.vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'scrooloose/syntastic'
 Plugin 'vimwiki'
-Plugin 'rodjek/vim-puppet'
-Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'powerline/powerline'
 
 " status line
 Plugin 'bling/vim-airline'
 " If you need to change .tmux.conf.statusline, install this plugin, then run
 " ':Tmuxline airline' and 'TmuxlineSnapshot! ~/.tmux.statusline.conf
 Plugin 'edkolev/tmuxline.vim'
-
-" Gitlab repos - setup an SSH key with Gitlab and run :BundleInstall to
-" install these.
-"Bundle 'ssh://git@gitlab.datcon.co.uk/vimips.git'
-"Bundle 'ssh://git@gitlab.datcon.co.uk/autocomment.git'
-"Bundle 'ssh://git@gitlab.datcon.co.uk/ctrlpgtags.git'
 
 call vundle#end()
 filetype plugin on " Required for Vundle
@@ -242,11 +228,3 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" vim-go
-au BufRead,BufNewFile *.go setfiletype go
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1

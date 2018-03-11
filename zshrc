@@ -96,20 +96,6 @@ then
   source ~/.zshrc_user
 fi
 
-alias bob='cdb && bob'
-
-fvd()
-{
-  cddebug && fvrun "$@"
-  cd - > /dev/null
-}
-
-fvr()
-{
-  cdrelease && fvrun "$@"
-  cd - > /dev/null
-}
-
 fix_zsh()
 {
   rm -f ~/.zcompdump*
@@ -117,59 +103,18 @@ fix_zsh()
   exec zsh
 }
 
-make_undercloud()
-{
-  cd ~/sprint/undercloud && sudo mkisofs -o ~/sprint/rhel7.3-undercloud.iso -U -r -v -T -J -joliet-long -V "RHEL-7.3 Server.x86_64" -volset "RHEL-7.3 Server.x86_64" -A "RHEL-7.3 Server.x86_64" -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot .
-}
+# Source paths for project euler
+source ~/code/euler/paths.sh
 
-package_sprint_scripts()
-{
-  cd ~/sprint/sprint_scripts
-  tar -czvf config_scripts.tar.gz *
-  mkisofs -o config_scripts.iso config_scripts.tar.gz
-  rm -f config_scripts.tar.gz
-}
+# Alias for quick access to euler project root
+alias cde='cd ~/code/euler'
 
-# Compile and extract the DSP FVs onto periR730.
-extract_dspdpfv()
-{
-  # Execute in a sub-shell so we can bail out on error.
+# Alias for clojure repl
+alias cloj='lein repl'
 
-  (
-    set -e
+# Alias for stackless python install
+alias spython='python3.7'
 
-    # Make octapi and the dsp FVs
-    scoop make octapi TARGET=production_release
-    scoop make dspdpfv_package TARGET=fv_debug
+alias ls='exa'
 
-    # Copy files onto perir730
-    scp ${CB_ROOT}/output/jobs/lnx64/production/release/liboctapi.so root@perir730-a.aaa:/disk0.7/opt/MetaSwitch/Version/V4.3.20_SU35_P254.00/lib/liboctapi.so
-    scp ${CB_ROOT}/output/jobs/lnx64/fv/debug/dspdpfv.tgz root@perir730-a.aaa:/disk0.7/dsp-dpfv/
-
-    # Untar the DSP FVs
-    ssh -t root@perir730-a.aaa "cd /disk0.7/dsp-dpfv/ && tar -xzvf dspdpfv.tgz && rm dspdpfv.tgz"
-  )
-}
-
-docker_kill()
-{
-  docker rm $(docker ps --filter "status=exited" -q)
-}
-
-# Convenience function to wrap jenkins_upg_perimeta.py, setting up the
-# PYTHONPATH as needed.
-# Uses the SLOTH framework to automatically upgrade a perimeta.
-upgrade_perimeta()
-{
-    # Execute in sub-shell so that PYTHONPATH changes are local.
-    (
-        PYTHONPATH="${CB_ROOT}/orlando/test/sloth2:${CB_ROOT}/orlando/python/legacy:${CB_ROOT}/orlando/python/packages:${CB_ROOT}/orlando/python/scripts"
-        python "${CB_ROOT}/orlando/python/scripts/jenkins/jenkins_upg_perimeta.py" "$@"
-    )
-}
-
-permoans()
-{
-  (cd ${CB_ROOT} && python ${CB_ROOT}/orlando/python/scripts/permoans.py)
-}
-
+alias fsi='fsharpi'
