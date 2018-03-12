@@ -21,6 +21,10 @@
   note = branch --edit-description
   info = status --porcelain -b
   yolo = !git commit -m \"[yolo] $(curl -s whatthecommit.com/index.txt)\"
+  dst = diff --staged
+  shf = diff-tree --no-commit-id --name-only -r
+  dup = diff @{upstream}
+  local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
 
 [merge]
   tool = vimdiff

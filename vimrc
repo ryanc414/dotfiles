@@ -102,8 +102,8 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<CR>
-set norelativenumber
-set nonumber
+set relativenumber
+highlight LineNr ctermfg=darkgray
 
 " Simple plugin settings
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
@@ -132,11 +132,7 @@ set statusline+=%*
 " Disable GCC checking, as it's not feasible with huge codebases.
 let g:syntastic_c_checkers=[]
 
-" Go syntax highlighting and stuff.
-filetype off
-filetype plugin indent off
-set rtp+=$GOROOT/misc/vim
-filetype plugin indent on
+"Syntax highlighting
 syntax on
 
 " Cscope options:
@@ -203,7 +199,6 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'scrooloose/syntastic'
 Plugin 'vimwiki'
 Plugin 'rodjek/vim-puppet'
-Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
