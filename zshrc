@@ -70,6 +70,7 @@ alias spython='python3.7'
 alias bob='cdb && bob'
 alias scoop='cdb && scoop'
 alias cds='cd ~/sprint/sprint_scripts'
+alias cdpdk='cd ~/code/ms-dpdk'
 
 # Path
 export PATH=$PATH:~/path/
@@ -138,12 +139,20 @@ extract_dspdpfv()
   (
     set -e
 
+    if [[ $# -lt 1 ]]
+    then
+      echo "Usage: $0 [version]"
+      exit 1
+    fi
+
+    VERSION="$1"
+
     # Make octapi and the dsp FVs
     scoop make octapi TARGET=production_release
     scoop make dspdpfv_package TARGET=fv_debug
 
     # Copy files onto perir730
-    scp ${CB_ROOT}/output/jobs/lnx64/production/release/liboctapi.so root@perir730-a.aaa:/disk0.7/opt/MetaSwitch/Version/V4.3.20_SU35_P254.00/lib/liboctapi.so
+    scp ${CB_ROOT}/output/jobs/lnx64/production/release/liboctapi.so "root@perir730-a.aaa:/disk0.7/opt/MetaSwitch/Version/$1/lib/liboctapi.so"
     scp ${CB_ROOT}/output/jobs/lnx64/fv/debug/dspdpfv.tgz root@perir730-a.aaa:/disk0.7/dsp-dpfv/
 
     # Untar the DSP FVs
@@ -171,5 +180,36 @@ upgrade_perimeta()
 permoans()
 {
   (cd ${CB_ROOT} && python ${CB_ROOT}/orlando/python/scripts/permoans.py)
+}
+
+# Output this week's time log from the base template.
+calc_times()
+{
+  python "$HOME/times/times.py"
+}
+
+# Open the most recent ipstrc drw file. For simplicity assume extended names
+# aren't in use.
+ipstrc()
+{
+  sub "$CB_ROOT/output/jobs/lnx64/fv/debug/ipstrc.drw"
+}
+
+# Open the most recent inttrc file. For simplicity assume extended names aren't
+# in use.
+inttrc()
+{
+  sub "$CB_ROOT/output/jobs/lnx64/fv/debug/inttrc.log"
+}
+
+# ... and the same for PD trace
+pdtrc()
+{
+  sub "$CB_ROOT/output/jobs/lnx64/fv/debug/pdtrc.log"
+}
+
+nbini()
+{
+  vim "$CB_ROOT/output/jobs/lnx64/fv/debug/nbase.ini"
 }
 
