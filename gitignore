@@ -6,3 +6,8 @@
 
 # ST
 *.sublime-*
+
+# GTAGS files
+GPATH
+GTAGS
+GRTAGS

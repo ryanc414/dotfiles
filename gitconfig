@@ -16,6 +16,7 @@
 	brs = log --branches --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lol = log --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s' HEAD origin/master
+  lv = log --oneline --decorate --graph --simplify-by-decoration
   untracked = ls-files --others --exclude-standard
   amend = commit --amend
   note = branch --edit-description

@@ -213,3 +213,8 @@ nbini()
   vim "$CB_ROOT/output/jobs/lnx64/fv/debug/nbase.ini"
 }
 
+errno()
+{
+  vim /usr/include/asm-generic/errno{,-base}.h
+}
+
