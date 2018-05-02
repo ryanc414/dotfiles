@@ -8,6 +8,7 @@ set ruler
 set scrolloff=3
 set nocompatible
 set noswapfile
+syntax on
 
 " Search configuration
 set hlsearch
@@ -42,16 +43,6 @@ function! s:RunShellCommand(cmdline)
   1
 endfunction
 
-" Ironman mode - I dare you :)
-"map <Left> <Nop>
-"map <Right> <Nop>
-"map <Up> <Nop>
-"map <Down> <Nop>
-"imap <Left> <Nop>
-"imap <Right> <Nop>
-"imap <Up> <Nop>
-"imap <Down> <Nop>
-
 " Insert unicode ✓ and ✗!
 imap <F5> <C-V>u2713
 imap <F6> <C-V>u2717
@@ -74,11 +65,9 @@ nnoremap td :tabclose<CR>
 set autoindent
 set expandtab
 set smarttab
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set cino+=(0"
-" Special Python indenting
-au FileType python setl sw=4
 
 " Highlight trailing whitespace, or whitespace before a tab
 highlight ExtraWhitespace ctermbg=darkred guibg=darkred
@@ -103,11 +92,11 @@ function! NumberToggle()
 endfunc
 nnoremap <C-n> :call NumberToggle()<CR>
 
+" By default use relative line numbering
 set relativenumber
 highlight LineNr ctermfg=darkgray
 
 " Simple plugin settings
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:rainbow_active = 1
 let g:sh_no_error = 1
 
@@ -161,14 +150,11 @@ nmap <f5> :buffers<CR>:buffer<space>
 
 " Ctrl-P options:
 set wildignore+=*.tmp,*.swp,*.so,*.zip,*.cache,*.class
-let g:ctrlp_custom_ignore = {
-     \ 'dir': '\v((\.git|\.svn)|/(orlandodocs|publicdocs|build|output))',
-          \ }
-          let g:ctrlp_max_files = 910000
-          let g:ctrlp_use_caching = 1
-          let g:ctrlp_clear_cache_on_exit = 0
-          let g:ctrlp_dotfiles = 0
-          let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+let g:ctrlp_max_files = 910000
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 
 " Tag searching wth CtrlP
 noremap <leader>g :CtrlPGtags<CR>
@@ -197,7 +183,8 @@ Bundle 'scrooloose/syntastic'
 Plugin 'vimwiki'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'powerline/powerline'
+Plugin 'DiscoViking/CtrlPGtags'
+Plugin 'rust-lang/rust.vim'
 
 " status line
 Plugin 'bling/vim-airline'
