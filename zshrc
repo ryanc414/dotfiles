@@ -99,6 +99,15 @@ fi
 
 alias bob='cdb && bob'
 
+# DCM directories
+export DCMBASE="$HOME/code/dcm"
+export DCMFV="$DCMBASE/lvs/craft/licservcraft/fv/"
+
+# Used for perifv build
+export BUILD_TYPE=debug
+export DOCKER_SOCKET="/var/run/docker.sock"
+
+# Shell functions
 fvd()
 {
   cddebug && fvrun "$@"
@@ -215,6 +224,66 @@ nbini()
 
 errno()
 {
-  vim /usr/include/asm-generic/errno{,-base}.h
+  vim -p /usr/include/asm-generic/errno{,-base}.h
+}
+
+set_expected()
+{
+    \cp -f "$DCMFV/actual/$1/fv_out" "$DCMFV/expected/$1/fv_expected"
+    \cp -f "$DCMFV/actual/$1/orch_out" "$DCMFV/expected/$1/orch_expected"
+}
+
+cddcm()
+{
+    cd "$DCMBASE"
+}
+
+cddcmfv()
+{
+    cd "$DCMFV"
+}
+
+sizes()
+{
+    du -h "$1" | sort -h | tail -n 30
+}
+
+start_fv_containers()
+{
+    sudo -E docker-compose pull && sudo -E docker-compose up -d --force-recreate
+}
+
+start_fv_instances()
+{
+    docker exec fv_ssc-a_1 /perifv/localscripts/start_vpcn.sh
+    docker exec fv_ssc-b_1 /perifv/localscripts/start_vpcn.sh
+}
+
+stop_fv_instances()
+{
+    docker exec fv_ssc-a_1 /perifv/localscripts/stop_vpcn.sh
+    docker exec fv_ssc-b_1 /perifv/localscripts/stop_vpcn.sh
+}
+
+docker_shell()
+{
+    (
+        if [[ $# -lt 1 ]]; then
+            echo "Specify image name"
+            exit 1
+        fi
+
+        docker exec -it "$1" /bin/bash
+    )
+}
+
+cdfv()
+{
+    cd "$CB_ROOT/orlando/test/fv"
+}
+
+fvr2()
+{
+    "$CB_ROOT/orlando/python/scripts/multifv/fvrun2.py" "$@"
 }
 
