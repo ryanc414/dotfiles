@@ -74,8 +74,8 @@ nnoremap td :tabclose<CR>
 set autoindent
 set expandtab
 set smarttab
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set cino+=(0"
 " Special Python indenting
 au FileType python setl sw=4
@@ -131,9 +131,9 @@ set statusline+=%*
 " let g:syntastic_check_on_wq = 0
 " Disable GCC checking, as it's not feasible with huge codebases.
 let g:syntastic_c_checkers=[]
-
-"Syntax highlighting
-syntax on
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_shell_checkers = ['shellcheck']
+let g:syntastic_rust_checkers = ['cargo']
 
 " Cscope options:
 set csprg=gtags-cscope
@@ -182,6 +182,7 @@ nnoremap <leader>a :AutoComment<CR>
 
 " Vundle options:
 set rtp+=~/.vim/bundle/Vundle.vim
+filetype off
 call vundle#begin()
 
 " Let Vundle manage itself (required)
@@ -201,6 +202,8 @@ Plugin 'vimwiki'
 Plugin 'rodjek/vim-puppet'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'rust-lang/rust.vim'
+Plugin 'dbeniamine/cheat.sh-vim'
 
 " status line
 Plugin 'bling/vim-airline'
@@ -216,6 +219,10 @@ Plugin 'edkolev/tmuxline.vim'
 
 call vundle#end()
 filetype plugin on " Required for Vundle
+
+"Syntax highlighting
+syntax on
+
 "
 " Brief help
 " :BundleList          - list configured bundles
