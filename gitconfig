@@ -26,6 +26,8 @@
   shf = diff-tree --no-commit-id --name-only -r
   dup = diff @{upstream}
   local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
+  subup = submodule update --recursive
+  nuke = clean -ffd
 
 [merge]
   tool = vimdiff
