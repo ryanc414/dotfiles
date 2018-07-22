@@ -6,3 +6,5 @@
 
 # ST
 *.sublime-*
+
+*__pycache__/
