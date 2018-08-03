@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/data/home'
 let g:netrw_dirhist_2='/data/rlc/code/hack12/hack12-rust-networking/src'
+let g:netrw_dirhist_3='/data/rlc/code/sbc/orlando/test/fv/tests/library/base/sip_driver_api'

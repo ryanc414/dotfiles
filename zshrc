@@ -287,3 +287,18 @@ fvr2()
     "$CB_ROOT/orlando/python/scripts/multifv/fvrun2.py" "$@"
 }
 
+git-nuke()
+{
+    sudo git clean -ffd && git reset --hard HEAD && git submodule update --init --recursive
+}
+
+fv_pdtrc()
+{
+    less "$CB_ROOT/perifvoutput/ssc-a/pdtrc_vpsi*"
+}
+
+fv_rlog()
+{
+    less "$CB_ROOT/perifvoutput/td/robot_debug.log"
+}
+
