@@ -12,10 +12,7 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle go
 antigen bundle command-not-found
-# antigen bundle tmuxinator
-antigen bundle taskwarrior
 antigen bundle colored-man-pages
 antigen bundle sudo
 
@@ -31,14 +28,8 @@ antigen bundle supercrabtree/k
 # 'sensible' defaults
 antigen bundle willghatch/zsh-saneopt
 
-# Load the theme.
-export ZSH_THEME="agnoster"
-export BULLETTRAIN_PROMPT_SEPARATE_LINE=false
-export BULLETTRAIN_PROMPT_ADD_NEWLINE=false
-export BULLETTRAIN_EXEC_TIME_SHOW=true
-export BULLETTRAIN_GIT_EXTENDED=false # Simple 'is workspace dirty' only to save time on large codebases
-BULLETTRAIN_PROMPT_ORDER=(time status custom context dir perl ruby virtualenv aws go elixir git hg cmd_exec_time)
-antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+# Set the theme - do not use a powerline one.
+antigen theme robbyrussell
 
 # Tell antigen that you're done.
 antigen apply
@@ -47,29 +38,13 @@ antigen apply
 export EDITOR=vim
 
 # Alias
-alias gotest='go test -v . | sed ''/PASS/s//$(printf "\033[32;1mPASS\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31;1mFAIL\033[0m")/'' | sed ''/RUN/s//$(printf "\033[0;1mRUN\033[0m")/'''
-## For tmux to work in 256 colour mode
 alias tmux='TERM=xterm-256color tmux'
-## Alias for next task
-alias tn='tasknote'
-alias ts='task summary'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias ll='ll -h'
-alias cdb='cd $CB_ROOT'
-alias cdd='cd /data'
 alias grep='grep --color -I'
-alias cddebug='cd $CB_ROOT/output/jobs/lnx64/fv/debug'
-alias cdrelease='cd $CB_ROOT/output/jobs/lnx64/fv/release'
 alias ls=exa
-alias sub=sublime
-alias fls='firefox ${CB_ROOT}/output/autogen/rdf/fls.html &'
-alias gitlab='~/bin/gitlab'
-alias spython='python3.7'
-alias bob='cdb && bob'
-alias scoop='cdb && scoop'
-alias cds='cd ~/sprint/sprint_scripts'
 
 # Path
 export PATH=$PATH:~/path/
@@ -96,6 +71,7 @@ then
   source ~/.zshrc_user
 fi
 
+# Sometimes zsh autocomplete will break... Run this to fix.
 fix_zsh()
 {
   rm -f ~/.zcompdump*
@@ -103,18 +79,5 @@ fix_zsh()
   exec zsh
 }
 
-# Source paths for project euler
-source ~/code/euler/paths.sh
-
-# Alias for quick access to euler project root
-alias cde='cd ~/code/euler'
-
-# Alias for clojure repl
-alias cloj='lein repl'
-
-# Alias for stackless python install
-alias spython='python3.7'
-
 alias ls='exa'
 
-alias fsi='fsharpi'

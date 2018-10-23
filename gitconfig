@@ -4,16 +4,16 @@
   editor = vim
 
 [alias]
-	co = checkout
-	cm = commit
-	rb = rebase
-	br = branch
+  co = checkout
+  cm = commit
+  rb = rebase
+  br = branch
   df = diff --color
   fd = diff --name-only
-	st = status
+  st = status
   cp = cherry-pick
-	hist = log --all --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
-	brs = log --branches --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
+  hist = log --all --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
+  brs = log --branches --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s'
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lol = log --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s' HEAD origin/master
   lv = log --oneline --decorate --graph --simplify-by-decoration
@@ -26,6 +26,7 @@
   shf = diff-tree --no-commit-id --name-only -r
   dup = diff @{upstream}
   local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
+  au = add -u
 
 [merge]
   tool = vimdiff
