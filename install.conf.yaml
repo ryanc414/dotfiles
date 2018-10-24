@@ -11,10 +11,6 @@
         path: bin/br
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
-    ~/path/tasknote:
-        create: true
-        path: bin/tasknote
-    ~/.taskrc: taskrc
     ~/.tmux.conf: tmux.conf
     ~/.tmux.statusline.conf: tmux.statusline.conf
     ~/.vim: vim
