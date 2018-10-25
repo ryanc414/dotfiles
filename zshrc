@@ -38,7 +38,6 @@ antigen apply
 export EDITOR=vim
 
 # Alias
-alias tmux='TERM=xterm-256color tmux'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -57,9 +56,6 @@ fi
 
 # Don't share history
 setopt no_share_history
-
-# Terminal type
-export TERM="xterm-256color"
 
 # Colour scheme for tasknote
 # Do `mdv -t all | less` to explore other options.
