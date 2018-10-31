@@ -108,7 +108,7 @@ let g:pymode_lint_ignore = "E265"
 let g:pymode_rope = 0
 let g:pymode_doc = 1
 let g:pymode_folding = 0
-"let g:pymode_python = 'python3'
+let g:pymode_python = 'python3'
 let g:pymode_options_max_line_length = 79
 
 " Syntastic settings
