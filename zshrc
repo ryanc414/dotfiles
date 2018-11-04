@@ -45,8 +45,8 @@ alias ll='ll -h'
 alias grep='grep --color -I'
 alias ls=exa
 
-# Path
-export PATH=$PATH:~/path/
+# Path. Include local paths.
+export PATH="$PATH:$HOME/path/:$HOME/.local/bin"
 
 # FZF - needs installing so only source if installed.
 if [ -f ~/.fzf.zsh ]

@@ -178,13 +178,11 @@ Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'python-mode/python-mode'
 Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle 'rking/ag.vim'
-Bundle 'derekwyatt/vim-scala'
 Bundle 'scrooloose/syntastic'
 Plugin 'vimwiki'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'DiscoViking/CtrlPGtags'
-Plugin 'rust-lang/rust.vim'
 
 " status line
 Plugin 'bling/vim-airline'
@@ -215,3 +213,5 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" Set a ruler at 80 characters.
+set colorcolumn=80

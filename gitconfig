@@ -27,6 +27,7 @@
   dup = diff @{upstream}
   local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
   au = add -u
+  sm = submodule
 
 [merge]
   tool = vimdiff
