@@ -35,10 +35,6 @@
 [push]
 	default = current
 
-[user]
-	name = Ryan Collingham
-    email = ryanc118@gmail.com
-
 [gc]
   auto = 256
   pruneExpire = now
