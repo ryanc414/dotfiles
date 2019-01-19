@@ -28,12 +28,14 @@
   local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
   au = add -u
   sm = submodule
+  bra = branch -a
+  dfm = !git diff $(git merge-base HEAD master)
 
 [merge]
   tool = vimdiff
 
 [push]
-	default = current
+  default = current
 
 [gc]
   auto = 256
