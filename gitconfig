@@ -64,3 +64,6 @@
   prompt = yellow bold
   help = white
 
+[user]
+	email = ryanc118@gmail.com
+	name = Ryan Collingham
