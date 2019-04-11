@@ -75,5 +75,14 @@ fix_zsh()
   exec zsh
 }
 
+# Misellaneous aliases.
+#
+# Use "exa" as a replacement for "ls".
 alias ls='exa'
+
+# Python related aliases: Use python3 as default python version.
+alias python='python3'
+alias pip='pip3'
+alias pytest='python3 -m pytest'
+alias pytest2='python2 -m pytest'
 
