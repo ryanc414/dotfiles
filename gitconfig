@@ -30,6 +30,7 @@
   sm = submodule
   bra = branch -a
   dfm = !git diff $(git merge-base HEAD master)
+  cob = checkout -b
 
 [merge]
   tool = vimdiff
