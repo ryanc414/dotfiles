@@ -82,7 +82,8 @@ alias ls='exa'
 
 # Python related aliases: Use python3 as default python version.
 alias python='python3.7'
-alias pip='pip3'
+alias pip='python3.7 -m pip'
 alias pytest='python3.7 -m pytest'
+alias pip2='python2 -m pip'
 alias pytest2='python2 -m pytest'
 
