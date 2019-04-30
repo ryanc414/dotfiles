@@ -81,8 +81,8 @@ fix_zsh()
 alias ls='exa'
 
 # Python related aliases: Use python3 as default python version.
-alias python='python3'
+alias python='python3.7'
 alias pip='pip3'
-alias pytest='python3 -m pytest'
+alias pytest='python3.7 -m pytest'
 alias pytest2='python2 -m pytest'
 
