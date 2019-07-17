@@ -68,3 +68,5 @@
 [user]
 	email = ryanc118@gmail.com
 	name = Ryan Collingham
+[credential]
+	helper = store
