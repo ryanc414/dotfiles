@@ -80,10 +80,7 @@ fix_zsh()
 # Use "exa" as a replacement for "ls".
 alias ls='exa'
 
-# Python related aliases: Use python3 as default python version.
-alias python='python3.7'
-alias pip='python3.7 -m pip'
-alias pytest='python3.7 -m pytest'
-alias pip2='python2 -m pip'
-alias pytest2='python2 -m pytest'
+# Aliases for python virtual envs
+alias py2="source ~/.venv/py2/bin/activate"
+alias py3="source ~/.venv/py3/bin/activate"
 
