@@ -82,5 +82,5 @@ alias ls='exa'
 
 # Aliases for python virtual envs
 alias py2="source ~/.venv/py2/bin/activate"
-alias py3="source ~/.venv/py3/bin/activate"
+alias py3="source ~/.venv/py37/bin/activate"
 
