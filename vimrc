@@ -189,6 +189,8 @@ Plugin 'bling/vim-airline'
 " If you need to change .tmux.conf.statusline, install this plugin, then run
 " ':Tmuxline airline' and 'TmuxlineSnapshot! ~/.tmux.statusline.conf
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 
 call vundle#end()
 filetype plugin on " Required for Vundle
@@ -215,3 +217,7 @@ endif
 
 " Set a ruler at 80 characters.
 set colorcolumn=80
+
+" set filetypes as typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+
