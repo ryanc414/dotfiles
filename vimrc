@@ -220,4 +220,5 @@ set colorcolumn=80
 
 " set filetypes as typescript.tsx
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx,*.js setlocal shiftwidth=2 tabstop=2
 
