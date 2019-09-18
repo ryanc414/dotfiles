@@ -191,6 +191,7 @@ Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin on " Required for Vundle
