@@ -84,3 +84,4 @@ alias ls='exa'
 alias py2="source ~/.venv/py2/bin/activate"
 alias py3="source ~/.venv/py37/bin/activate"
 
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
