@@ -84,4 +84,10 @@ alias ls='exa'
 alias py2="source ~/.venv/py2/bin/activate"
 alias py3="source ~/.venv/py37/bin/activate"
 
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+export PATH="/usr/local/opt/vim/bin:/usr/local/opt/python@3.8/bin:$HOME/go/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ryan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ryan/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ryan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ryan/google-cloud-sdk/completion.zsh.inc'; fi

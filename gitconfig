@@ -66,5 +66,10 @@
   help = white
 
 [user]
-	email = ryanc118@gmail.com
+	email = ryan@tokencard.io
 	name = Ryan Collingham
+	signingkey = 171ED58FBB6A0826
+[commit]
+	gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
