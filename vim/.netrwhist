@@ -1,1 +1,9 @@
-let g:netrw_dirhistmax  =0
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/ryan/code/pytest_commander/pytest_examples'
+let g:netrw_dirhist_6='/Users/ryan/code/learn_ethereum/call_examples/contracts'
+let g:netrw_dirhist_5='/Users/ryan/code/monolith/monolith/cmd/crypto-seller-client'
+let g:netrw_dirhist_4='/Users/ryan/code/monolith/monolith/service/crypto-seller/inttest'
+let g:netrw_dirhist_3='/Users/ryan/code/monolith/cloud-management/terraform/modules/service-pusher'
+let g:netrw_dirhist_2='/Users/ryan/code/monolith/cloud-management/terraform/modules/service-common'
+let g:netrw_dirhist_1='/Users/ryan/code/monolith/pnc/scripts'

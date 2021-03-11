@@ -44,9 +44,10 @@ alias mv='mv -i'
 alias ll='ll -h'
 alias grep='grep --color -I'
 alias ls=exa
+alias cat=bat
 
 # Path. Include local paths.
-export PATH="$PATH:$HOME/path/:$HOME/.local/bin"
+export PATH="$PATH:$HOME/path/:$HOME/.local/bin:$HOME/scripts"
 
 # FZF - needs installing so only source if installed.
 if [ -f ~/.fzf.zsh ]
@@ -80,32 +81,11 @@ fix_zsh()
 # Use "exa" as a replacement for "ls".
 alias ls='exa'
 
-# Aliases for python virtual envs
-alias py2="source ~/.venv/py2/bin/activate"
-alias py3="source ~/.venv/py37/bin/activate"
-
-export PATH="/usr/local/opt/vim/bin:/usr/local/opt/python@3.8/bin:$HOME/go/bin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ryan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ryan/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/ryan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ryan/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Config for Android studio
-export ANDROID_HOME=/Users/ryan/Library/Android/sdk
-export PATH=$ANDROID_HOME/tools:$PATH
-export PATH=$ANDROID_HOME/tools/bin:$PATH
-export PATH=$ANDROID_HOME/platform-tools:$PATH
-
-# Use python3 as default python
-alias python=python3
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Set python3 as default python version
+alias python='python3'
 
 if [[ -z $TMUX ]]; then
     tmux
 fi
 
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)

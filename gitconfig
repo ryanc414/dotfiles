@@ -18,7 +18,7 @@
   lol = log --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s' HEAD origin/master
   lv = log --oneline --decorate --graph --simplify-by-decoration
   untracked = ls-files --others --exclude-standard
-  amend = commit --amend
+  amend = commit --amend --no-edit
   note = branch --edit-description
   info = status --porcelain -b
   yolo = !git commit -m \"[yolo] $(curl -s whatthecommit.com/index.txt)\"
@@ -29,12 +29,19 @@
   au = add -u
   sm = submodule
   bra = branch -a
-  dfm = !git diff $(git merge-base HEAD master)
   cob = checkout -b
+  brl = branch --sort=-committerdate
 
+#[merge]
+#  tool = vimdiff
 [merge]
-  tool = vimdiff
-
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 [push]
   default = current
 
@@ -71,3 +78,9 @@
 	signingkey = 171ED58FBB6A0826
 [commit]
 	gpgsign = true
+[credential]
+	helper = osxkeychain
+[gpg]
+	program = gpg
+[pull]
+	rebase = false
